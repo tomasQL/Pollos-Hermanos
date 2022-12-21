@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <title>Django Taller Final</title>
+    <!-- CSS only -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}"/>
+
+  </head>
+  <body>
+    <main>
+      <div class="text-center">
+        <img src="{% static 'images/polloshermanosicon.png' %}" class="img-fluid w-25">  
+    </div>
+      <section class="py-5 text-center container">
+        <div class="row py-lg-5">
+          <div class="col-lg-6 col-md-8 mx-auto">
+            <h1 class="fw-light">Bienvenido a Pollos Hermanos Intranet</h1>
+            <p class="font-weight-bold">A continuación podrás seleccionar uno de los dos botones para continuar con las operaciones de la empresa o, en su defecto salir de la web</p>
+            <p>
+              <a href="/lista" class="btn btn-primary my-2">Ingresar al Sistema de Reservas</a>
+              <a href="https://youtu.be/4J9V1xe50Mg" class="btn btn-secondary my-2">Salir...</a>
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <hr>
+    <footer class="text-muted py-5">
+      <div class="container">
+        <!-- <p class="float-end mb-1"><a href="#">Volver arriba</a></p> -->
+        <p class="mb-1">&reg; PollosHermanos Restaurante</p>
+      </div>
+    </footer>
+  </body>
+</html>

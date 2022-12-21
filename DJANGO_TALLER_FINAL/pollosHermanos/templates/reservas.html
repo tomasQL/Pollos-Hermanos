@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Reservas</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}"/>
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}"/>
+        <link rel="stylesheet" href="{% static 'css/styles.css' %}"/>
+
+    </head>
+    <body>   
+        <div class="text-center">
+            <img src="{% static 'images/polloshermanosicon.png' %}" class="img-fluid w-25">  
+        </div>
+
+        <div class="text-center">
+            <a class="btn btn-primary" href="/agregar">Agregar reserva</a>
+            <a class="btn btn-primary" href="/">Volver al inicio</a>
+        </div>     
+        <main>
+            {% if reserva %}
+                <div class="card d-flex justify-content-center mx-5">
+                    <table class="table">
+                        <tr>
+                            <th scope="col">Nombre de la persona</th>
+                            <th scope="col">Teléfono</th>
+                            <th scope="col">Fecha de la reserva</th>
+                            <th scope="col">Hora de la reserva</th>
+                            <th scope="col">Cantidad de personas</th>
+                            <th scope="col">Estado de reserva</th>
+                            <th scope="col">Observaciones</th>
+                            <th scope="col">Operaciones</th>
+                        </tr>
+                        {% for i in reserva %}
+                            <tr>
+                                <td>{{i.nombrePersona}}</td>
+                                <td>{{i.telefono}}</td>
+                                <td>{{i.fechaReserva}}</td>
+                                <td>{{i.horaReserva}}</td>
+                                <td>{{i.cantidadPersonas}}</td>
+                                <td>{{i.estadoReserva}}</td>
+                                <td>{{i.observacion}}</td>
+                                <td>
+                                    <a class="btn btn-primary" href="/actualizar/{{i.id}}">&#128260;actualizar</a>
+                                    <a class="btn btn-danger" href="/eliminar/{{i.id}}">&#128465;eliminar</a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+                {% else %}
+                    <h1 class="text-center">No hay reservas aún</h1>
+            {% endif %}
+        </main>
+        <hr>
+        <footer class="text-muted py-5">
+            <div class="container">
+              <!-- <p class="float-end mb-1"><a href="#">Volver arriba</a></p> -->
+              <p class="mb-1">&reg; PollosHermanos Restaurante</p>
+            </div>
+          </footer>
+    </body>
+</html>

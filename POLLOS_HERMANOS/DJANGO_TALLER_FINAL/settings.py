@@ -80,7 +80,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'django_reservas',
         'USER': 'root',
-        'PASSWORD': '',
+        'PASSWORD': '1234,MySqL',
     }
 }
 
